@@ -99,7 +99,7 @@ fn part2(chunks: Vec<Chunk>) -> i64 {
         .collect::<Vec<i64>>();
     scores.sort();
     let length: f64 = scores.len() as f64;
-    println!("{:?}", scores);
+    
     let guess: usize = ((length/2.0)-0.5).round() as usize;
     scores[guess]
 }

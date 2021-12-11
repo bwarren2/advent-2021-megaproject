@@ -22,7 +22,7 @@ impl Line<'_> {
         Line { inputs, outputs }
     }
     fn easy_digit_count(&self) -> i32 {
-        let mut set: HashSet<usize> = [2, 3, 4, 7].iter().cloned().collect();
+        let set: HashSet<usize> = [2, 3, 4, 7].iter().cloned().collect();
         let easy_count = self
             .outputs
             .iter()

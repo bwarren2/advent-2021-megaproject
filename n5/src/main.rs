@@ -110,7 +110,7 @@ fn overlap(lines: &mut Vec<Line>) -> i32 {
     }
     let mut ct = 0;
 
-    for (key, value) in places {
+    for (_key, value) in places {
         if value >= 2 {
             // println!("{:?}", key);
             ct += 1;
