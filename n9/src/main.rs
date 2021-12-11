@@ -82,7 +82,7 @@ fn part2(hashmap: &mut HashMap<(isize, isize), isize>, rows: isize, cols: isize)
                 basin_size += 1;
                 let current_position = deque.pop_front().unwrap();
                 for adders in &adder_options {
-                    let new_point = (current_position.0 + adders.0, current_position.1+ adders.1);
+                    let new_point = (current_position.0 + adders.0, current_position.1 + adders.1);
                     let adjacent_value = hashmap.get(&new_point);
                     if adjacent_value != None
                         && *adjacent_value.unwrap() != 9
@@ -93,8 +93,8 @@ fn part2(hashmap: &mut HashMap<(isize, isize), isize>, rows: isize, cols: isize)
                     }
                 }
             }
-            if basin_size != 0{
-                basins.push(basin_size-1);
+            if basin_size != 0 {
+                basins.push(basin_size - 1);
             }
         }
     }
