@@ -79,7 +79,6 @@ fn part2(hashmap: &mut HashMap<(isize, isize), isize>, rows: isize, cols: isize)
             }
             let mut basin_size = 0;
             while deque.len() > 0 {
-                basin_size += 1;
                 let current_position = deque.pop_front().unwrap();
                 for adders in &adder_options {
                     let new_point = (current_position.0 + adders.0, current_position.1 + adders.1);
@@ -90,11 +89,12 @@ fn part2(hashmap: &mut HashMap<(isize, isize), isize>, rows: isize, cols: isize)
                     {
                         deque.push_back(new_point);
                         visited.insert(new_point);
+                        basin_size += 1;
                     }
                 }
             }
             if basin_size != 0 {
-                basins.push(basin_size - 1);
+                basins.push(basin_size);
             }
         }
     }
